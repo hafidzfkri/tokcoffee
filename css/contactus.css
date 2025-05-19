@@ -1,0 +1,449 @@
+/* Reset default margin, padding, dan memastikan box-sizing border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Menentukan font utama pada halaman */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #A8B5A2;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background: transparent; /* Awalnya transparan */
+    box-shadow: none;
+    position: fixed; /* Navbar tetap di atas saat di-scroll */
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: background 0.3s ease-in-out, padding 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Navbar saat di-scroll */
+.navbar.scrolled {
+    background: rgba(75, 56, 50, 0.8);
+    padding: 15px 40px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    overflow: visible;
+    z-index: 1100;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: height 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.logo img {
+    height: 230px;
+    transition: height 0.3s ease-in-out;
+}
+
+/* Saat navbar di-scroll, logo mengecil */
+.navbar.scrolled .logo img {
+    height: 120px;
+}
+
+/* Ikon Navigasi */
+.nav-icon img {
+    height: 50px;
+}
+
+/* Tombol Menu */
+.menu-toggle {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #222;
+    color: white;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 1100;
+}
+
+.menu-toggle:hover {
+    background: #444;
+}
+
+.menu-toggle.active {
+    background: #B79B7E;
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, -15px);
+    width: 550px;
+    background: rgba(58, 58, 58, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 1200;
+    padding: 15px 0;
+
+    /* Hidden state */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Show state */
+.dropdown-menu.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* Efek glow saat hover */
+.dropdown-menu:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Atur teks dalam dropdown */
+.dropdown-menu a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #F4D4A6;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Efek hover */
+.dropdown-menu a:hover {
+    background: rgba(183, 155, 126, 0.5);
+    color: #FFD7A3;
+    border-radius: 10px;
+}
+
+/* Efek tulisan tercoret untuk halaman aktif */
+.dropdown-menu a.active {
+    text-decoration: line-through;
+    color: #B79B7E;
+    font-style: italic;
+}
+
+
+    /* HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/bg.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    z-index: 900;
+}
+
+/* Overlay transparan */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(75, 56, 50, 0.25);
+    top: 0;
+    left: 0;
+}
+
+/* Pastikan gambar berada di tengah */
+.herocontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.herocontent img {
+    width: 70%;
+    max-width: none;
+    position: relative;
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: slideFromTop 1s ease-out forwards;
+    display: block;
+    object-fit: contain;
+    display: block;
+}
+
+@keyframes slideFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero-hands {
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    justify-content: center;
+}
+
+.hero-hands .hand {
+    width: 90%;
+    max-width: none; /* Sesuaikan ukuran */
+    display: block;
+    object-fit: contain;
+    animation: slideUp 1s ease-out forwards;
+    justify-content: center;
+}
+
+/* ANIMASI */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    /* CONTACT US SECTION */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 20px;
+  position: relative;
+}
+
+.tab {
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #d2b48c;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.tab:before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #8b5e3c;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease;
+}
+
+.tab:hover {
+  transform: translateY(-5px);
+}
+
+.tab:hover:before {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.tab.active {
+  background-color: #8b5e3c;
+  color: white;
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  display: flex;
+  gap: 40px;
+  background-color: #D7CEC7;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-container:hover {
+  transform: translateY(-5px);
+}
+
+.info-box {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: #8b5e3c;
+}
+
+.send-btn {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.send-btn:hover {
+  background-color: #6f3d22;
+  transform: translateY(-3px);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.icon {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+
+    /* FOOTER */
+footer {
+    background-color: #2c2c2c;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    max-width: 900px;
+    margin: auto;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+.logo-section img {
+    max-width: 120px;
+}
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+.footer-bottom a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+.social p {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.social a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.social a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+
+
+
+

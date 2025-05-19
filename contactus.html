@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactUS</title>
+    <link rel="stylesheet" href="css/contactus.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <a href="https://www.instagram.com/hafidzfkrii/" target="_blank" class="nav-icon">
+            <img src="img/ig.png" alt="Instagram">
+        </a>
+        <div class="logo">
+            <img src="img/navbar.png" alt="tokcoffee">
+        </div>
+        <button class="menu-toggle" id="menu-toggle">
+            ☰
+        </button>
+    </nav>
+
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="contactus.html" class="active">Contact Us</a>
+        <a href="downloadapp.html">Download App</a>
+    </div>
+
+    <!-- hero section -->
+    <section class="hero" id="home">
+        <div class="herocontent">
+            <img src="img/tokcoffee.png" alt="tokcoffee">
+        </div>
+        <div class="hero-hands">
+            <img src="img/gambar tangan.png" alt="hand" class="hand"> 
+        </div>
+     </section>
+
+     <!-- contactus section -->
+     <!-- TAB MENU -->
+    <div class="tabs">
+      <button class="tab active" data-tab="pertanyaan">Pertanyaan</button>
+      <button class="tab" data-tab="kemitraan">Kemitraan</button>
+      <button class="tab" data-tab="investor">Hubungan Investor</button>
+    </div>
+
+    <!-- TAB PERTANYAAN -->
+    <div class="tab-content active" id="pertanyaan">
+      <div class="contact-container">
+        <div class="info-box">
+          <h2>Informasi Kontak</h2>
+          <p>Jika Anda mempunyai pertanyaan atau kekhawatiran, hubungi kami dengan mengisi formulir kontak</p>
+          <p><span class="icon">📞</span> 0851-7788-9900</p>
+          <p><span class="icon">✉️</span> hellotokcoffee@gamil.com</p>
+          <p><span class="icon">📍</span> Gedung Pixel Prime, Lantai 7, Ruang 707</p>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/xqaqwkva" method="POST">
+          <label>Nama</label>
+          <input type="text" name="name" required />
+
+          <label>Email</label>
+          <input type="email" name="email" required />
+
+          <label>No HP</label>  
+          <input type="tel" name="phone" required />
+
+          <label>Pesan</label>
+          <textarea name="message" rows="6" required></textarea>
+
+          <button type="submit" class="send-btn">SEND</button>
+          <div class="form-status"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- TAB KEMITRAAN -->
+    <div class="tab-content" id="kemitraan">
+      <div class="contact-container">
+        <div class="info-box">
+          <h2>Kemitraan</h2>
+          <p>Tertarik bermitra? Hubungi tim kami untuk kolaborasi bisnis.</p>
+          <p><span class="icon">📞</span> 0851-7788-9900</p>
+          <p><span class="icon">✉️</span> kemitraantokcoffee@gamil.com</p>
+          <p><span class="icon">📍</span> Gedung Pixel Prime, Lantai 7, Ruang 707</p>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/mnndlqek" method="POST">
+          <label>Nama Perusahaan</label>
+          <input type="text" name="name" required />
+
+          <label>Email</label>
+          <input type="email" name="email" required />
+
+          <label>Kontak</label>
+          <input type="tel" name="phone" required />
+
+          <label>Proposal / Pesan</label>
+          <textarea name="message" rows="6" required></textarea>
+
+          <button type="submit" class="send-btn">KIRIM</button>
+          <div class="form-status"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- TAB INVESTOR -->
+    <div class="tab-content" id="investor">
+      <div class="contact-container">
+        <div class="info-box">
+          <h2>Hubungan Investor</h2>
+          <p>Untuk pertanyaan investasi atau laporan keuangan, hubungi tim investor kami.</p>
+          <p><span class="icon">📞</span> 0851-7788-9900</p>
+          <p><span class="icon">✉️</span> investortokcoffee@gmail.com</p>
+          <p><span class="icon">📍</span> Gedung Pixel Prime, Lantai 7, Ruang 707</p>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/xjkwjvnn" method="POST">
+          <label>Nama</label>
+          <input type="text" name="name" required />
+
+          <label>Email</label>
+          <input type="email" name="email" required />
+
+          <label>Perusahaan (Opsional)</label>
+          <input type="text" name="company" />
+
+          <label>Pesan</label>
+          <textarea name="message" rows="6" required></textarea>
+
+          <button type="submit" class="send-btn">KIRIM</button>
+          <div class="form-status"></div>
+        </form>
+      </div>
+    </div>
+
+      
+      <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-container">
+            <div class="logo-section">
+                <img src="img/gambarawal.png" alt="tokcoffee Logo">
+            </div>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Customer Center</h4><br>
+                    <p>📍 Gedung Pixel Prime, Lantai 7, Ruang 707</p><br>
+                    <p>Jl. Teknokratika No. 88, Kelurahan Cybernesia, Kecamatan Databytes, Kota Digitalaya, 12345</p><br>
+                    <p>📞 0851-7788-9900 (WhatsApp & Call Center)</p><br>
+                    <p>✉️ hellotokcoffee@gamil.com</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Emotional Support Complaints</h4><br>
+                    <p>Directorate of Unspoken Feelings and Mixed Signals</p><br>
+                    <p>Ministry of Mutual Confusion & Unclear Intentions</p><br>                  
+                </div>
+                <div class="footer-column social">
+                    <h4>Follow Us</h4><br>
+                    <p>
+                        <a href="https://www.instagram.com/hafidzfkrii/" target="_blank">@tokcoffeeindonesia</a>
+                    </p><br>
+                    <p>
+                        <a href="https://www.youtube.com/@m.hafidzhazimulfikri911" target="_blank">YouTube</a> |
+                        <a href="https://x.com/fikriiee_" target="_blank">Twitter/X</a> |
+                        <a href="https://www.instagram.com/hafidzfkrii/" target="_blank">Instagram</a> |
+                        <a href="https://www.linkedin.com/in/m-hafidz-hazimulfikri-bb5513344/" target="_blank">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Tokcoffee Coffee. All rights reserved</p><br>
+          <p><a href="contactus.html">Terms and Conditions</a> • <a href="contactus.html">Privacy Policy</a></p>
+      </div>
+
+      <script src="js/contactus.js"></script>
+</body>
+</html>

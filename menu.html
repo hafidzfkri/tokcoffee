@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+        <link rel="stylesheet" href="css/menu.css">
+        <script defer src="js/menu.js"></script>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <a href="https://www.instagram.com/hafidzfkrii/" target="_blank" class="nav-icon">
+            <img src="img/ig.png" alt="Instagram">
+        </a>
+        <div class="logo">
+            <img src="img/navbar.png" alt="tokcoffee">
+        </div>
+        <button class="menu-toggle" id="menu-toggle">
+            ☰
+        </button>
+    </nav>
+
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="downloadapp.html">Download App</a>
+    </div>
+
+    <!-- hero section -->
+    <section class="hero" id="home">
+        <div class="herocontent">
+            <img src="img/tokcoffee.png" alt="tokcoffee">
+        </div>
+        <div class="hero-hands">
+            <img src="img/gambar tangan.png" alt="hand" class="hand"> 
+        </div>
+     </section>
+
+    <!-- menu section -->
+    <main class="menu-page">
+        <h1 class="menu-title">Sip & Savor</h1>
+
+        <div class="menu-filter">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="coffee">Caffeine-fix</button>
+            <button class="filter-btn" data-category="frappe">Frappe</button>
+            <button class="filter-btn" data-category="Non Coffee">Caffeine-free</button>
+            <button class="filter-btn" data-category="food">Dishes</button>
+        </div>
+
+        <section class="menu-grid">
+            <div class="menu-item" data-category="coffee">
+                <img src="img/americano.png" alt="Americano">
+                <h2>Americano</h2>
+                <p>Americano adalah minuman kopi berbasis espresso yang dibuat dengan menambahkan air panas untuk mengencerkan espresso.</p>
+                <span class="price">Rp 22.000</span>
+            </div>
+
+            <div class="menu-item" data-category="coffee">
+                <img src="img/capuccino.png" alt="Cappuccino">
+                <h2>Cappuccino</h2>
+                <p>Cappuccino adalah minuman kopi berbasis espresso yang dicampur dengan susu dalam komposisi yang lebih seimbang antara kopi, susu, dan busa susu.</p>
+                <span class="price">Rp 25.000</span>
+            </div>
+
+            <div class="menu-item" data-category="coffee">
+                <img src="img/cocoa capuccino.png" alt="Cocoa Capuccino">
+                <h2>Cocoa Capuccino</h2>
+                <p>Cocoa Cappuccino adalah variasi dari cappuccino yang menggunakan espresso, susu steamed, dan foam susu, serta ditambahkan bubuk kakao atau coklat di atasnya.</p>
+                <span class="price">Rp 35.000</span>
+            </div>
+
+            <div class="menu-item" data-category="coffee">
+                <img src="img/flat white.png" alt="Flat White">
+                <h2>Flat White</h2>
+                <p>Flat White adalah minuman kopi berbasis espresso yang dicampur dengan microfoam susu (susu yang dikukus hingga berbusa halus).</p>
+                <span class="price">Rp 30.000</span>
+            </div>
+
+            <div class="menu-item" data-category="coffee">
+                <img src="img/ristretto bianco.png" alt="Ristretto Bianco">
+                <h2>Ristretto Bianco</h2>
+                <p>Ristretto Bianco adalah variasi latte yang menggunakan ristretto (bukan espresso biasa) sebagai dasar kopinya.</p>
+                <span class="price">Rp 31.000</span>
+            </div>
+
+            <div class="menu-item" data-category="coffee">
+                <img src="img/espresso machiato.png" alt="Espresso Macchiato">
+                <h2>Espresso Macchiato</h2>
+                <p>Espresso Macchiato adalah espresso dengan sedikit busa susu di atasnya.</p>
+                <span class="price">Rp 27.000</span>
+            </div>
+
+            <div class="menu-item" data-category="coffee">
+                <img src="img/caramel machiato.png" alt="Caramel Macchiato">
+                <h2>Caramel Macchiato</h2>
+                <p>Caramel Macchiato adalah minuman berbasis espresso dan susu dengan tambahan sirup vanilla dan saus karamel.</p>
+                <span class="price">Rp 34.000</span>
+            </div>
+
+            <div class="menu-item" data-category="coffee">
+                <img src="img/caffe latte.png" alt="Caffe Latte">
+                <h2>Caffe Latte</h2>
+                <p>Caffè latte adalah minuman kopi berbasis espresso yang dicampur dengan susu dalam perbandingan yang lebih banyak dibandingkan cappuccino.</p>
+                <span class="price">Rp 29.000</span>
+            </div>
+
+            <div class="menu-item" data-category="frappe">
+                <img src="img/coffee frappe.png" alt="Coffee Frappe">
+                <h2>Coffee Frappe</h2>
+                <p>Kopi dingin yang diblender sama susu, es batu, dan gula, terus hasilnya creamy dan nyegerin.</p>
+                <span class="price">Rp 26.000</span>
+            </div>
+
+            <div class="menu-item" data-category="frappe">
+                <img src="img/chocolate frappe.png" alt="Chocolate Frappe">
+                <h2>Chocolate Frappe</h2>
+                <p>Coklat dingin yang diblender sama susu dan es batu, rasanya manis, creamy, dan cocok buat pecinta coklat.</p>
+                <span class="price">Rp 30.000</span>
+            </div>
+
+            <div class="menu-item" data-category="frappe">
+                <img src="img/aren latte frappe.png" alt="Aren Latte Frappe">
+                <h2>Aren Latte Frappe</h2>
+                <p>Kopi susu yang manisnya pakai gula aren, jadi ada sentuhan caramel yang khas dan nagih.</p>
+                <span class="price">Rp 27.000</span>
+            </div>
+
+            <div class="menu-item" data-category="frappe">
+                <img src="img/matcha frappe.png" alt="Matcha Frappe">
+                <h2>Matcha Frappe</h2>
+                <p>Matcha dingin yang diblender sama susu dan es batu, rasanya creamy, manis, dan ada hint pahit khas matcha.</p>
+                <span class="price">Rp 29.000</span>
+            </div>
+
+            <div class="menu-item" data-category="Non Coffee">
+                <img src="img/chocolate.png" alt="Chocolate">
+                <h2>Chocolate</h2>
+                <p>Minuman cokelat creamy yang manis dan bikin happy, kayak minum cokelat batangan versi cair!</p>
+                <span class="price">Rp 26.000</span>
+            </div>
+
+            <div class="menu-item" data-category="Non Coffee">
+                <img src="img/Matcha Latte.png" alt="Matcha Latte">
+                <h2>Matcha Latte</h2>
+                <p>Teh hijau ala Jepang yang smooth dan elegan, dengan campuran susu bikin rasanya makin lembut.</p>
+                <span class="price">Rp 28.000</span>
+            </div>
+
+            <div class="menu-item" data-category="Non Coffee">
+                <img src="img/Taro Latte.png" alt="Taro Latte">
+                <h2>Taro Latte</h2>
+                <p>Minuman ungu kece dengan rasa manis, lembut, dan sedikit nutty dari talas ungu. Creamy banget dan bikin vibes makin aesthetic!</p>
+                <span class="price">Rp 20.000</span>
+            </div>
+
+            <div class="menu-item" data-category="Non Coffee">
+                <img src="img/Ice Salted Caramel.png" alt="Ice Salted Caramel">
+                <h2>Ice Salted Caramel</h2>
+                <p>Perpaduan karamel manis dan sedikit asin yang bikin rasa makin mantap, apalagi kalau diminum dingin!</p>
+                <span class="price">Rp 29.000</span>
+            </div>
+
+            <div class="menu-item" data-category="Non Coffee">
+                <img src="img/Red Velvet.png" alt="Red Velvet">
+                <h2>Red Velvet</h2>
+                <p>Minuman merah kece dengan rasa cake red velvet yang creamy dan elegan. Minum ini, berasa fancy banget!</p>
+                <span class="price">Rp 27.000</span>
+            </div>
+
+            <div class="menu-item" data-category="Non Coffee">
+                <img src="img/Hazelnut Latte.png" alt="Hazelnut Latte">
+                <h2>Hazelnut Latte</h2>
+                <p>Kopi plus sentuhan kacang hazelnut yang wangi dan legit. Cocok buat yang suka vibe chill tapi tetap classy!</p>
+                <span class="price">Rp 33.000</span>
+            </div>
+
+            <div class="menu-item" data-category="Non Coffee">
+                <img src="img/Houjicha Latte.png" alt="Houjicha Latte">
+                <h2>Houjicha Latte</h2>
+                <p>Perpaduan teh hijau panggang dengan susu creamy, hadirkan rasa smoky yang unik dan menenangkan. Nikmat untuk relaksasi kapan saja!</p>
+                <span class="price">Rp 30.000</span>
+            </div>
+
+            <div class="menu-item" data-category="Non Coffee">
+                <img src="img/Mineral Water.png" alt="Mineral Water">
+                <h2>Mineral Water</h2>
+                <p>Air putih yang simpel tapi esensial! Segar, murni, dan bikin tubuh tetap terhidrasi. Cocok buat yang suka kesegaran alami tanpa tambahan rasa.</p>
+                <span class="price">Rp 10.000</span>
+            </div>
+
+            <div class="menu-item" data-category="food">
+                <img src="img/Butter Croissant.png" alt="Butter Croissant">
+                <h2>Butter Croissant</h2>
+                <p>Croissant klasik yang buttery, renyah di luar dan lembut di dalam. Simpel tapi bikin ketagihan.</p>
+                <span class="price">Rp 24.000</span>
+            </div>
+
+            <div class="menu-item" data-category="food">
+                <img src="img/Cinnamon Roll.png" alt="Cinnamon Roll">
+                <h2>Cinnamon Roll</h2>
+                <p>Roti gulung dengan lapisan kayu manis yang harum dan manis, ditambah glaze di atasnya yang bikin makin dreamy.</p>
+                <span class="price">Rp 30.000</span>
+            </div>
+
+            <div class="menu-item" data-category="food">
+                <img src="img/Almond Croissant.png" alt="Almond Croissant">
+                <h2>Almond Croissant</h2>
+                <p>Croissant dengan topping almond renyah dan isian krim almond yang gurih-manis. Elegan dan mewah di setiap gigitan</p>
+                <span class="price">Rp 33.000</span>
+            </div>
+
+            <div class="menu-item" data-category="food">
+                <img src="img/Cho Croissant.png" alt="Cho Croissant">
+                <h2>Cho Croissant</h2>
+                <p>Croissant dengan isian cokelat leleh yang rich dan bikin mood auto happy. Perfect buat pecinta cokelat!</p>
+                <span class="price">Rp 26.000</span>
+            </div>
+
+            <div class="menu-item" data-category="food">
+                <img src="img/Tuna Mayo Toast.png" alt="Tuna Mayo Toast                ">
+                <h2>Tuna Mayo Toast</h2>
+                <p>Roti panggang dengan isian tuna segar dan mayo creamy yang bikin lumer di mulut. Simple tapi bikin nagih!</p>
+                <span class="price">Rp 35.000</span>
+            </div>
+
+            <div class="menu-item" data-category="food">
+                <img src="img/Smoked Beef Sandwich.png" alt="Smoked Beef Sandwich">
+                <h2>Smoked Beef Sandwich</h2>
+                <p>Sandwich berisi daging sapi asap yang juicy dengan saus spesial. Cocok buat yang suka rasa gurih dan smokey.</p>
+                <span class="price">Rp 37.000</span>
+            </div>
+
+            <div class="menu-item" data-category="food">
+                <img src="img/Potato Stick.png" alt="Potato Stick">
+                <h2>Potato Stick</h2>
+                <p>Kentang pilihan yang diiris tipis memanjang, digoreng hingga renyah keemasan, dan dibumbui dengan racikan rasa gurih yang nikmat. Cocok dinikmati sebagai camilan santai atau teman ngobrol.</p>
+                <span class="price">Rp 20.000</span>
+            </div>
+
+            <div class="menu-item" data-category="food">
+                <img src="img/Chicken Teriyaki Burger.png" alt="Chicken Teriyaki Burger">
+                <h2>Chicken Teriyaki Burger</h2>
+                <p>Ayam teriyaki dengan rasa manis gurih khas Jepang, berpadu sempurna dengan roti lembut. Bikin kenyang dan happy.</p>
+                <span class="price">Rp 31.000</span>
+            </div>
+        </section>
+    </main>
+
+     <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-container">
+            <div class="logo-section">
+                <img src="img/gambarawal.png" alt="tokcoffee Logo">
+            </div>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Customer Center</h4><br>
+                    <p>📍 Gedung Pixel Prime, Lantai 7, Ruang 707</p><br>
+                    <p>Jl. Teknokratika No. 88, Kelurahan Cybernesia, Kecamatan Databytes, Kota Digitalaya, 12345</p><br>
+                    <p>📞 0851-7788-9900 (WhatsApp & Call Center)</p><br>
+                    <p>✉️ hellotokcoffee@gamil.com</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Emotional Support Complaints</h4><br>
+                    <p>Directorate of Unspoken Feelings and Mixed Signals</p><br>
+                    <p>Ministry of Mutual Confusion & Unclear Intentions</p><br>                  
+                </div>
+                <div class="footer-column social">
+                    <h4>Follow Us</h4><br>
+                    <p>
+                        <a href="https://www.instagram.com/hafidzfkrii/" target="_blank">@tokcoffeeindonesia</a>
+                    </p><br>
+                    <p>
+                        <a href="https://www.youtube.com/@m.hafidzhazimulfikri911" target="_blank">YouTube</a> |
+                        <a href="https://x.com/fikriiee_" target="_blank">Twitter/X</a> |
+                        <a href="https://www.instagram.com/hafidzfkrii/" target="_blank">Instagram</a> |
+                        <a href="https://www.linkedin.com/in/m-hafidz-hazimulfikri-bb5513344/" target="_blank">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tokcoffee Coffee. All rights reserved</p><br>
+            <p><a href="menu.html">Terms and Conditions</a> • <a href="menu.html">Privacy Policy</a></p>
+        </div>
+</body>
+</html>

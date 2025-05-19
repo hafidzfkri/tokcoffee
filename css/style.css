@@ -1,0 +1,581 @@
+/* Reset default margin, padding, dan memastikan box-sizing border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Menentukan font utama pada halaman */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 70px;
+}
+
+    /* NAVBAR */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background: transparent; /* Awalnya transparan */
+    box-shadow: none;
+    position: fixed; /* Navbar tetap di atas saat di-scroll */
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: background 0.3s ease-in-out, padding 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Navbar saat di-scroll */
+.navbar.scrolled {
+    background: rgba(75, 56, 50, 0.8); /* Putih dengan efek transparan sedikit */
+    padding: 15px 40px; /* Mengecilkan navbar saat di-scroll */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px); /* Efek blur agar lebih smooth */
+    overflow: visible; /* Pastikan dropdown tidak terpotong */
+    z-index: 1100; /* Pastikan navbar tidak menutupi dropdown */
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: height 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.logo img {
+    height: 230px; /* Ukuran awal logo */
+    transition: height 0.3s ease-in-out;
+}
+
+/* Saat navbar di-scroll, logo mengecil */
+.navbar.scrolled .logo img {
+    height: 120px; /* Ukuran lebih kecil saat di-scroll */
+}
+
+/* Ikon Navigasi */
+.nav-icon img {
+    height: 50px;
+}
+
+/* Tombol Menu */
+/* Tombol Menu Bulat */
+.menu-toggle {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #222; /* Warna gelap */
+    color: white;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 1100;
+}
+
+/* Hover efek */
+.menu-toggle:hover {
+    background: #444;
+}
+
+/* Saat tombol aktif (jadi X) */
+.menu-toggle.active {
+    background: #B79B7E; /* Warna soft */
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 550px; /* Lebih besar & lega */
+    background: rgba(58, 58, 58, 0.8); /* Efek transparan */
+    backdrop-filter: blur(10px); /* Efek glassmorphism */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Border glow */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Efek floating */
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 1200;
+    padding: 15px 0;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Animasi munculnya dropdown */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -15px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Efek glow saat hover */
+.dropdown-menu:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Atur teks dalam dropdown */
+.dropdown-menu a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #F4D4A6; /* Warna soft untuk teks */
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Efek hover */
+.dropdown-menu a:hover {
+    background: rgba(183, 155, 126, 0.5); /* Efek glassy */
+    color: #FFD7A3;
+    border-radius: 10px;
+}
+
+/* Efek tulisan tercoret untuk halaman aktif */
+.dropdown-menu a.active {
+    text-decoration: line-through;
+    color: #B79B7E;
+    font-style: italic;
+}
+
+/* Tampilkan menu saat tombol ditekan */
+.dropdown-menu.show {
+    display: block;
+}
+
+
+    /* HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/bg.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    z-index: 900;
+}
+
+/* Overlay transparan */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(75, 56, 50, 0.25);
+    top: 0;
+    left: 0;
+}
+
+/* Pastikan gambar berada di tengah */
+.herocontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.herocontent img {
+    width: 70%;
+    max-width: none;
+    position: relative;
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: slideFromTop 1s ease-out forwards;
+    display: block;
+    object-fit: contain;
+    display: block;
+}
+
+@keyframes slideFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero-hands {
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    justify-content: center;
+}
+
+.hero-hands .hand {
+    width: 90%;
+    max-width: none; /* Sesuaikan ukuran */
+    display: block;
+    object-fit: contain;
+    animation: slideUp 1s ease-out forwards;
+    justify-content: center;
+}
+
+/* ANIMASI */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tombol Learn More */
+.learn-more-btn {
+    position: absolute;
+    bottom: 20px;  /* Posisi tombol di bagian bawah hero */
+    left: 50%;
+    transform: translateX(-50%) translateY(50px); /* Mulai dari bawah */
+    padding: 10px 30px;
+    background-color: #5A5F66; /* Warna latar belakang tombol */
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10; /* Pastikan tombol berada di atas */
+    opacity: 0; /* Mulai dengan opacity 0 */
+    animation: slideUp 1s forwards; /* Animasi muncul */
+}
+
+.learn-more-btn:hover {
+    background-color: #F0E5D3; /* Warna saat tombol dihover */
+    transform: scale(1.05); /* Memperbesar tombol saat dihover */
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(50px); /* Posisi awal di bawah */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0); /* Posisi akhir di tengah */
+    }
+}
+
+
+    /* BEST MENU */
+.bestmenu {
+    max-width: 1400px; /* Lebarkan container */
+    margin: 60px auto;
+    padding: 40px;
+    background: linear-gradient(135deg, #222, #555); /* Warna lebih modern */
+    border-radius: 25px;
+}
+
+.menucontent h1 {
+    color: #B79B7E; /* Warna emas agar lebih mencolok */
+    margin-bottom: 40px;
+    text-align: left;
+    font-size: 48px; /* Perbesar ukuran teks */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Tambahkan jarak antar huruf */
+    font-family: "Trebuchet MS", Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 4px 4px 10px rgba(244, 212, 166, 0.5); /* Efek glowing emas */
+    position: relative;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* Efek garis bawah animasi */
+.menucontent h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100px;
+    height: 4px;
+    background: #B79B7E; /* Garis emas */
+    transition: width 0.5s ease-in-out;
+}
+
+/* Efek saat muncul */
+.menucontent h1.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animasi garis saat muncul */
+.menucontent h1.visible::after {
+    width: 150px; /* Garis bertambah panjang */
+}
+
+.menuitems {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.menuitem {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 320px; /* Perbesar ukuran item */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Saat elemen muncul */
+.menuitem.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Efek hover lebih smooth */
+.menuitem:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.menuitem img {
+    width: 180px; /* Perbesar gambar */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 6px solid #D7CEC7; /* Border lebih tebal */
+}
+
+.menuitem h3 {
+    margin: 20px 0 12px;
+    font-size: 28px; /* Perbesar teks */
+    font-weight: bold;
+    color: #fff; /* Warna teks jadi putih */
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1.5px; /* Tambahkan spasi antar huruf */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Efek bayangan teks */
+    transition: color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Efek saat hover */
+.menuitem:hover h3 {
+    color: #B79B7E; /* Warna emas saat dihover */
+    transform: scale(1.1); /* Perbesar teks saat hover */
+}
+
+/* Saat elemen muncul */
+.menuitem h3.text-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+  /* TEAM SECTION */
+.community {
+    text-align: center;
+    background: #F0E5D3;
+    padding: 150px 0;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.headline {
+    font-size: 3.8rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    color: #6E7F80;
+    background: transparent;
+    display: inline-block;
+    padding: 10px 20px;
+    border-bottom: 4px solid #6E7F80;
+}
+
+.headline:hover {
+    color: #f4f4f4;
+    letter-spacing: 1px;
+    transition: 0.3s ease-in-out;
+}
+
+.carousel {
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-container {
+    display: flex;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    margin: 20px;
+    transition: transform 0.4s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.4s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.7);
+    filter: brightness(80%) saturate(120%);
+}
+
+.carousel img:hover {
+    transform: scale(1.2) rotate(-5deg);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+    filter: brightness(100%) saturate(150%);
+    outline: 5px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 5px;
+    transition: outline 0.3s ease-in-out;
+}
+
+/* Styling for arrow buttons */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+    /* FOOTER */
+footer {
+    background-color: #2c2c2c;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    max-width: 900px;
+    margin: auto;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+.logo-section img {
+    max-width: 120px;
+}
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+.footer-bottom a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+.social p {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.social a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.social a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
